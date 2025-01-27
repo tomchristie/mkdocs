@@ -21,7 +21,6 @@ import urllib.parse
 import webbrowser
 import wsgiref.simple_server
 import wsgiref.util
-from os import getpid
 from typing import Any, BinaryIO, Callable, Iterable
 
 import watchdog.events
@@ -182,7 +181,6 @@ class LiveReloadServer(socketserver.ThreadingMixIn, wsgiref.simple_server.WSGISe
 
             paths_str = ", ".join(f"'{_try_relativize_path(path)}'" for path in self._watched_paths)
             log.info(f"Watching paths for changes: {paths_str}")
-
 
         if open_in_browser:
             log.info(f"Serving on {self.url} and opening it in a browser")

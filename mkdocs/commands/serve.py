@@ -81,7 +81,6 @@ def serve(
         return None
 
     def handle_signal(signum, frame) -> None:
-
         from signal import strsignal
 
         signal_name = strsignal(signum)
